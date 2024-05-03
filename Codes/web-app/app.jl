@@ -11,7 +11,7 @@ using GenieFramework
 
     @onchange N, amp, freq begin
         x = range(0, 1, length=N)
-        y = amp*sin.(2*π*freq*x)
+        y = amp*sin.(2*π*freq*x.+pha).+off
         
         my_sine = PlotData(x=x, 
                            y=y, 
